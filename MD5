@@ -1,0 +1,16 @@
+7cd6d3d6cbe38551b95e82bc5a0e4a91 *DESCRIPTION
+463715a5d8da409fd1a65992b342fff5 *NAMESPACE
+008fed1ebd64f2ddef90bfb33e28664c *NEWS
+4852adf358dfffdca3d9945e9f67dbe0 *R/NormalizingWeight.R
+04995118e19946257892b963e75c3d9b *R/derFreeGPA.R
+8286b7e9c5f05f7dbe82434dce486990 *build/vignette.rds
+a2f8e058c2ae0f62049c2164d30a2749 *inst/CITATION
+21660ba19a8879049df31463a8742c1f *inst/doc/GPArotateDF.R
+0a1b700f0f4342b0ef6be9625bfdcfc8 *inst/doc/GPArotateDF.Stex
+75cfebdbb55b905718a9ca208843fe6a *inst/doc/GPArotateDF.pdf
+fb0e135656fd5f5598c93597d9b4615f *man/00.GPArotateDF.Rd
+e27168f6e36ea499dbd4fa5cf0aa60db *man/GPADF.Rd
+1dacb1fbea77977b3ff15a5a62fb1b11 *man/ff.rotationsDF.Rd
+e74c233811ed1417774bbcf4fa18a295 *man/rotationsDF.Rd
+acfefa5ec64f62ddf708d17dbdd0e9e4 *tests/rotations.R
+0a1b700f0f4342b0ef6be9625bfdcfc8 *vignettes/GPArotateDF.Stex
