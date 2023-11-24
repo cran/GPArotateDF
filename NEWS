@@ -1,4 +1,9 @@
+Changes in GPArotateDF version 2023.11-1
        
+   o    Updated ff.target and ff.pst to allow for NA in the Target matrix
+
+   o    Updated normalizingWeight to be consistent with GPArotation
+    
 Changes in GPArotateDF version 2022.12-1
 
    o    Initial package release

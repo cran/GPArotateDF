@@ -1,35 +1,23 @@
-citHeader("To cite GPArotateDF in publications use:")
 
-citEntry(entry="Article",
-  author	= personList(as.person("Robert I.Jennrich")),
-  year 		= "2004",
-  title 	= "Derivative free gradient projection algorithms for rotation",
-  journal 	= "Psychometrika",
-  volume 	= "69",
-  issue		= "3",
-  pages 	= "475--480",
+ bibentry(bibtype="article",
+    title = "Derivative free gradient projection algorithms for rotation",
+    author = "Robert I. Jennrich",
+    journal = "Psychometrika",
+    year = "2004",
+    volume = "69",
+    issue = "3",
+    pages = "475--480",
+    doi = "10.1007/BF02295647"
+)
   
-  textVersion = 
-     paste("Jennrich, R.I. (2004) ", 
-       "Derivative free gradient projection algorithms for rotation, ",
-       "Psychometrika: 69(3), 475-480. ")
-  )
-  
+ bibentry(bibtype="article",
+    title = "Gradient Projection Algorithms and Software for Arbitrary Rotation Criteria in Factor Analysis",
+    author = "Coen A. Bernaards and Robert I. Jennrich",
+    journal = "Educational and Psychological Measurement",
+    year = "2005",
+    volume = "65",
+    issue = "5",
+    pages = "676--696",
+    doi = "10.1177/0013164404272507"
+)
 
-citEntry(entry="Article",
-  author	= personList(as.person("Coen A. Bernaards"),
-                         as.person("Robert I.Jennrich")),
-  year 		= "2005",
-  title 	= "Gradient Projection Algorithms and Software for Arbitrary Rotation Criteria in Factor Analysis",
-  journal 	= "Educational and Psychological Measurement",
-  volume 	= "65",
-  issue		= "5",
-  pages 	= "676--696",
-  
-  textVersion = 
-     paste("Bernaards, C.A. and Jennrich, R.I. (2005) ", 
-       "Gradient Projection Algorithms and Software for Arbitrary Rotation Criteria in Factor Analysis, ",
-       "Educational and Psychological Measurement: 65(5), 676-696. ",
-       "<doi: https://doi.org/10.1177/0013164404272507>.")
-  )  
-  

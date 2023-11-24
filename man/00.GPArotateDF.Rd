@@ -1,7 +1,6 @@
 \name{00.GPArotateDF}
 \alias{GPArotateDF}
 \alias{GPArotateDF-package}
-\alias{00.GPArotateDF-package}
 \alias{GPArotateDF.Intro}
 \docType{package}
 \title{Derivative-Free Gradient Projection Algorithms for Factor Rotation}

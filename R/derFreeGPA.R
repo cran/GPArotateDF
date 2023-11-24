@@ -169,7 +169,7 @@ ff.quartimin <- function(L){
 
 ff.target <- function(L,Target = NULL){
   # Needs Target matrix, e.g.  Target <-matrix(c(rep(9,4),rep(0,8),rep(9,4)),8) 
-  f <- sum((L-Target)^2)
+  f <- sum((L-Target)^2, na.rm = TRUE)
   list(f = f,
   		Method = "DF-Target rotation")
 }
@@ -181,7 +181,7 @@ ff.pst <- function(L,W = NULL,Target = NULL){
   # Needs a Target matrix Target with hypothesized factor loadings.
   # e.g. Target = matrix(0,8,2)
   Btilde <- W * Target
-  f <- sum((W*L-Btilde)^2)
+  f <- sum((W*L-Btilde)^2, na.rm = TRUE)
   list(f = f,
   		Method = "DF-PST")
 }

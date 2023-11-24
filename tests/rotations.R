@@ -453,7 +453,31 @@ LGDF <- GPForth.df(L, normalize = TRUE, eps=1e-5, method = "target",
     all.ok <- FALSE  
     } 
  
-   	  
+
+A <- matrix(c(0.664, 0.688, 0.492,  0.837,  0.705,  0.82,  0.661, 0.457, 0.765,
+              0.322, 0.248, 0.304, -0.291, -0.314, -0.377, 0.397, 0.294, 0.428,
+             -0.075, 0.192, 0.224, 0.037, 0.155,  -0.104, 0.077, 0-.488, 0.009),
+            ncol = 3)
+T0 <- matrix(NA, ncol = 3, nrow = 9)
+T0[1, 1] <- T0[2, 1] <- T0[1, 2] <- 0
+LG <- targetT(A, Target = T0)
+LGDF <- GPForth.df(A, method="target", methodArgs=list(Target = T0))
+  if( fuzz < max(abs(unclass(LGDF)$loadings - unclass(LG)$loadings))) {
+    cat("Calculated value is not the same as test value in test rotations 1. Value:\n")
+    cat("difference:\n")
+    print((unclass(LGDF)$loadings - unclass(LG)$loadings), digits=18)
+    all.ok <- FALSE  
+    } 
+ 
+fuzz <- 1e-2 # Because loadings to zero, lower the bar to same results
+LG <- targetQ(A, Target = T0)
+LGDF <- GPFoblq.df(A, method="target", methodArgs=list(Target = T0))
+  if( fuzz < max(abs(unclass(LGDF)$loadings - unclass(LG)$loadings))) {
+    cat("Calculated value is not the same as test value in test rotations 1. Value:\n")
+    cat("difference:\n")
+    print((unclass(LGDF)$loadings - unclass(LG)$loadings), digits=18)
+    all.ok <- FALSE  
+    } 
  
 # pstT
 # This won't converge properly
