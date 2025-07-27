@@ -118,6 +118,8 @@ GPFoblq.df <- function (A, Tmat = diag(ncol(A)), normalize = FALSE, eps = 1e-05,
     Table <- rbind(Table,c(iter,f$f,log10(s),al))
     if (s < eps)
        break
+    if (al == 0) 
+       break
      al <- 2*al
      for (i in 0:10){
        X <- Tmat-al*Gp
@@ -125,14 +127,18 @@ GPFoblq.df <- function (A, Tmat = diag(ncol(A)), normalize = FALSE, eps = 1e-05,
        Tmatt <- X %*% diag(v)
        L <- A %*% t(solve(Tmatt))
        ft <- do.call(Method, append(list(L), methodArgs))
-       if (ft$f < (f$f-.5*s^2*al))
-          break
+    #
+        improvement <- f$f - ft$f 
+        if (improvement > .5*s^2*al) break
+   #    if (ft$f < (f$f-.5*s^2*al))
+   #       break
        al <- al/2
      } 
      Tmat <- Tmatt
    }
    L <- A %*% t(solve(Tmat))
-   convergence <- (s < eps)
+   # convergence <- (s < eps)
+   convergence <- (s < eps | al == 0)
    if ((iter == maxit) & !convergence) 
         warning("convergence not obtained in GPFoblq.df. ", maxit, 
             " iterations used.")

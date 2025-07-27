@@ -90,13 +90,38 @@
  
  }
 \examples{
+  # Example from Mulaik, S.A. (2018) Fundamentals of Common Analysis in 
+  # Irwing, P., Booth, T., Hughes, D. J.  (20180314). The Wiley Handbook of 
+  # Psychometric Testing, 2 Volume Set: A Multidisciplinary Reference on Survey, 
+  # Scale and Test Development. [VitalSource Bookshelf 10.2.0]. 
+  # Retrieved from vbk://9781118489703
+  # See Part II, Table 8.5 (p.225) and Table 8.6 (p.235)
+
+  ff.absolmin <- function(L)
+  {
+    f <- sum(abs(L))
+    list(f = f, Method = "DF-Absolmin")
+  }
+  absolmin.df <- function(A, Tmat = diag(ncol(A)), normalize = FALSE, eps = 1e-5, maxit = 1000){
+   GPFoblq.df(A, Tmat=Tmat, method = "absolmin", normalize = normalize, eps = eps, maxit = maxit)	
+  }
+  # absolmin.df(fa.unrotated$loadings, normalize = TRUE)
+  
+  # See GPArotation vignette for a bug in factanal with oblique rotation.
+
+  data("Griffith")  
+  fa.unrotated <- factanal(covmat = Griffith, factors = 6, rotation = "none")
+  GPFoblq.df(fa.unrotated$loadings, method = "quartimin", normalize = TRUE)
+  
+  absolmin.df(fa.unrotated$loadings, normalize = TRUE)
+  
   data("Harman", package="GPArotation")
   qHarman  <- GPForth.df(Harman8, Tmat=diag(2), method="quartimax")
   
-  # define a new function as ff.newname for use with factanal
+  # define a new function as ff.newname orthogonal rotation for use with factanal
   ff.expomax <- function(L)
   {
-    f <- -sum(diag(expm1(abs(L))))
+    f <- -sum(expm1(abs(L)))
     list(f = f, Method = "DF-Expomax")
   }
   GPForth.df(Harman8, method ="expomax")

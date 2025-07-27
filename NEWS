@@ -1,3 +1,11 @@
+Changes in GPArotateDF version 2025.7-1
+       
+   o    Added missing NormalizingWeight man file 
+   
+Changes in GPArotateDF version 2024.3-1
+       
+   o    Added data Griffith.rda and included example analysis in documentation
+
 Changes in GPArotateDF version 2023.11-1
        
    o    Updated ff.target and ff.pst to allow for NA in the Target matrix
